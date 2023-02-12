@@ -1,0 +1,23 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .userInfo {
+    color: #fff;
+    box-sizing: border-box;
+    border: 0.5px solid white;
+    background-color: #08aeea;
+    background-image: linear-gradient(0deg, #08aeea 0%, #17a867 50%);
+    max-width: max-content;
+    text-align: center;
+  }
+</style>
+<h1 style="color: white; font-size: 3.5rem" class="text-center">Home page</h1>
+
+{% if user.is_authenticated %}
+<div class="userInfo">
+  <p>Name: {{user.first_name}} {{ user.last_name}}</p>
+  <p>Username: {{user.username}}</p>
+
+  <p>Email: {{user.email}}</p>
+</div>
+
+{% endif %} {% endblock %}
