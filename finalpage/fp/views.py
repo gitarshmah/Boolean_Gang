@@ -189,13 +189,15 @@ def plotting(request):
     plt.plot(pred_df, color='red', label='Predicted Stock Price')
     plt.plot(df_test.index, y_pred_prev, color='red')
 
-    plt.grid()
+    
     plt.legend()
-    plt.title(f"Historical and Predicted Stock Price for {comp_symbol}")
-    plt.xlabel("Dates")
-    plt.ylabel("Price (Rs/Share)")
 
-    plt.style.use('seaborn-dark')
+    plt.savefig('images/p1.png')
+    
+    
+    
+
+    
     print("Accurarcy = " + str(accuracy))
 
     return render(request, 'base.html')
