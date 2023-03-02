@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -8,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-)@mr)m!h8@y&rngw$(z%-57++ivkn=0nwv-s0!^l125i0v%0ks'
+SECRET_KEY = "django-insecure-)@mr)m!h8@y&rngw$(z%-57++ivkn=0nwv-s0!^l125i0v%0ks"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +37,14 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
+
+DEFAULT_BREAKPOINTS = {
+    'phone': 480,
+    'tablet': 767,
+    'desktop': None,
+}
 
 ROOT_URLCONF = 'Stock_Market.urls'
 
@@ -51,6 +59,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'responsive.context_processors.device_info',
             ],
         },
     },
